@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>ChatGPT Plus: Free Unlock</title>
+    
+    <!-- Premium Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* --- THEME VARIABLES --- */
+        :root {
+            --bg-deep: #020617;
+            --bg-card: #0f172a;
+            --primary: #8b5cf6;
+            --secondary: #06b6d4;
+            --gold: #fbbf24;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --glass: rgba(15, 23, 42, 0.6);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --neon-glow: 0 0 20px rgba(6, 182, 212, 0.4);
+        }
+
+        html { scroll-behavior: smooth; } /* Enable Smooth Scroll */
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: var(--bg-deep);
+            color: var(--text-main);
+            font-family: 'Outfit', sans-serif;
+            overflow-x: hidden;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        /* --- BACKGROUND PARTICLES --- */
+        #particle-canvas {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            z-index: -1; opacity: 0.6;
+            background: radial-gradient(circle at 50% 10%, #1e1b4b, #000000);
+        }
+
+        /* --- CONTAINER --- */
+        .container {
+            max-width: 650px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .spacer { height: 80px; }
+
+        /* --- 1. ANIMATED HEADLINE --- */
+        header { text-align: center; margin-top: 40px; margin-bottom: 30px; }
+
+        .top-badge {
+            background: rgba(251, 191, 36, 0.1);
+            color: var(--gold);
+            border: 1px solid rgba(251, 191, 36, 0.3);
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            display: inline-block;
+            margin-bottom: 15px;
+            box-shadow: 0 0 15px rgba(251, 191, 36, 0.2);
+        }
+
+        .main-title {
+            font-size: 2.5rem;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 10px;
+            background: linear-gradient(to right, #fff 20%, #8b5cf6 50%, #06b6d4 80%);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientMove 3s linear infinite;
+        }
+
+        @keyframes gradientMove { to { background-position: 200% center; } }
+
+        .sub-text { font-size: 1rem; color: var(--text-muted); line-height: 1.5; }
+
+        /* --- 2. HERO IMAGE & SCROLL BUTTON --- */
+        .hero-box {
+            position: relative;
+            margin: 30px 0;
+            border-radius: 20px;
+            padding: 10px;
+            background: linear-gradient(180deg, rgba(255,255,255,0.1), transparent);
+            box-shadow: var(--neon-glow);
+            transform: perspective(1000px) rotateX(2deg);
+            transition: transform 0.5s;
+        }
+        .hero-box:hover { transform: perspective(1000px) rotateX(0deg); }
+        
+        .hero-box img { width: 100%; border-radius: 15px; display: block; }
+
+        .scroll-btn {
+            background: linear-gradient(90deg, var(--secondary), var(--primary));
+            color: white;
+            padding: 15px 40px;
+            border-radius: 50px;
+            border: none;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(6, 182, 212, 0.4);
+            transition: 0.3s;
+            display: inline-flex; align-items: center; gap: 10px;
+            animation: floatBtn 3s ease-in-out infinite;
+        }
+        .scroll-btn:hover { transform: scale(1.05); }
+
+        /* --- 3. HOLOGRAM 1: NEURAL ORB --- */
+        .holo-section { text-align: center; margin: 50px 0; }
+        .holo-label { font-size: 0.8rem; letter-spacing: 2px; color: var(--text-muted); margin-bottom: 20px; text-transform: uppercase; }
+
+        .orb-wrapper {
+            width: 150px; height: 150px; margin: 0 auto;
+            position: relative; display: flex; justify-content: center; align-items: center;
+        }
+        .orb-core {
+            width: 60px; height: 60px; background: var(--primary);
+            border-radius: 50%; box-shadow: 0 0 50px var(--primary);
+            animation: pulseOrb 2s infinite; z-index: 2;
+        }
+        .orb-ring {
+            position: absolute; border-radius: 50%; border: 1px solid rgba(6, 182, 212, 0.5);
+        }
+        .ring1 { width: 100%; height: 100%; animation: spin 8s linear infinite; border-top-color: transparent; }
+        .ring2 { width: 130%; height: 130%; animation: spinReverse 12s linear infinite; border-bottom-color: transparent; opacity: 0.5; }
+
+        /* --- 4. STEALTH FEATURES (TRAPS) --- */
+        .stealth-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin-bottom: 40px; }
+        
+        .stealth-card {
+            background: var(--bg-card); border: 1px solid var(--glass-border);
+            padding: 20px; border-radius: 16px; text-align: center;
+            transition: 0.3s; cursor: pointer; position: relative; overflow: hidden;
+        }
+        .stealth-card:hover { border-color: var(--secondary); background: rgba(6, 182, 212, 0.05); }
+        .stealth-card i { font-size: 2rem; margin-bottom: 10px; background: -webkit-linear-gradient(var(--secondary), var(--primary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        
+        .toggle-dot {
+            width: 10px; height: 10px; background: #333; border-radius: 50%;
+            margin: 10px auto 0 auto; transition: 0.3s; box-shadow: inset 0 0 2px black;
+        }
+        .stealth-card.active .toggle-dot { background: #22c55e; box-shadow: 0 0 10px #22c55e; }
+
+        /* --- 5. NATIVE AD --- */
+        .native-box {
+            background: rgba(255,255,255,0.02);
+            border-top: 2px solid var(--primary);
+            border-bottom: 2px solid var(--primary);
+            padding: 20px 0; margin: 40px 0;
+        }
+
+        /* --- 6. HOLOGRAM 2: DATA CUBE --- */
+        .cube-wrapper {
+            perspective: 800px; width: 100px; height: 100px; margin: 0 auto;
+        }
+        .cube {
+            width: 100%; height: 100%; position: relative; transform-style: preserve-3d;
+            animation: rotateCube 10s infinite linear;
+        }
+        .face {
+            position: absolute; width: 100px; height: 100px;
+            border: 1px solid var(--secondary); background: rgba(6, 182, 212, 0.1);
+            display: flex; justify-content: center; align-items: center; font-size: 2rem; color: white;
+        }
+        .f1 { transform: translateZ(50px); }
+        .f2 { transform: rotateY(180deg) translateZ(50px); }
+        .f3 { transform: rotateY(90deg) translateZ(50px); }
+        .f4 { transform: rotateY(-90deg) translateZ(50px); }
+        .f5 { transform: rotateX(90deg) translateZ(50px); }
+        .f6 { transform: rotateX(-90deg) translateZ(50px); }
+
+        /* --- 7. ACTIVATION PANEL (BOTTOM) --- */
+        .activation-area {
+            background: linear-gradient(145deg, #1e293b, #0f172a);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px; padding: 30px 20px;
+            text-align: center; box-shadow: 0 0 40px rgba(0,0,0,0.5);
+        }
+
+        .process-container { display: none; margin-top: 20px; }
+        
+        .progress-bar {
+            width: 100%; height: 6px; background: #333; border-radius: 10px; overflow: hidden; margin: 15px 0;
+        }
+        .progress-fill { width: 0%; height: 100%; background: var(--gold); transition: width 0.2s; }
+
+        .ad-modal {
+            width: 300px; height: 250px; margin: 15px auto;
+            background: #000; border: 1px solid #333;
+            display: flex; justify-content: center; align-items: center;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            border-top: 1px solid #333; padding: 40px 0; text-align: center;
+            color: var(--text-muted); font-size: 0.8rem; margin-top: 50px;
+        }
+
+        /* --- ANIMATION KEYFRAMES --- */
+        @keyframes spin { 100% { transform: rotate(360deg); } }
+        @keyframes spinReverse { 100% { transform: rotate(-360deg); } }
+        @keyframes pulseOrb { 0% { transform: scale(1); } 50% { transform: scale(1.1); } 100% { transform: scale(1); } }
+        @keyframes rotateCube { 0% { transform: rotateX(0deg) rotateY(0deg); } 100% { transform: rotateX(360deg) rotateY(360deg); } }
+        @keyframes floatBtn { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
+
+        /* --- NOTIFICATION --- */
+        .toast {
+            position: fixed; bottom: 20px; left: 20px;
+            background: rgba(15, 23, 42, 0.95); padding: 12px 20px; border-radius: 8px;
+            border-left: 3px solid var(--secondary); font-size: 0.85rem;
+            transform: translateX(-150%); transition: transform 0.5s; z-index: 100;
+        }
+        .toast.show { transform: translateX(0); }
+
+    </style>
+</head>
+<body oncontextmenu="return false">
+
+    <!-- SOCIAL BAR ADS -->
+    <script src="https://pl25271999.effectivegatecpm.com/3f/c4/4a/3fc44a02e9322868afb4be6ebc1bba64.js"></script>
+
+    <!-- BACKGROUND -->
+    <canvas id="particle-canvas"></canvas>
+
+    <!-- FAKE NOTIFICATION -->
+    <div class="toast" id="liveToast">
+        <span style="color:var(--secondary); font-weight:bold;">Alex</span> just unlocked Premium
+    </div>
+
+    <div class="container">
+        
+        <!-- HEADER -->
+        <header>
+            <div class="top-badge">Limited Time Offer</div>
+            <h1 class="main-title">Unlock ChatGPT<br>Premium for Free</h1>
+            <p class="sub-text">Get unlimited access to GPT-4o, DALL-E 3, and Voice Mode without monthly fees.</p>
+        </header>
+
+        <!-- HERO IMAGE & BUTTON -->
+        <div class="hero-box">
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEimDGgMoMvpONOSZ2R_IdoPn9dfppmeVdd3r_Qd_UbBLEShk2fcianm1LdAEPQxc8s_nqeoDYYpDYo0V14XY6yQaFHAIWpgIcM26Km7225dJPLJR-8W8dAWA8pgRvcM1627Mnw8e4INF_z_2aAebD1yhj49fZ5I8sYTuVZ2i2RyBlgNmWJxztsLP_A2r_k/s1600/ideogram-v3.0_A_professional_high-tech_promotional_banner_for_ChatGPT_Premium._The_center_feat-0.jpg" alt="Premium Dashboard">
+        </div>
+
+        <div style="text-align:center;">
+            <button onclick="scrollToActivation()" class="scroll-btn">
+                Unlock Now <i class="fas fa-arrow-down"></i>
+            </button>
+        </div>
+
+        <div class="spacer"></div>
+
+        <!-- HOLOGRAM 1: NEURAL AI -->
+        <div class="holo-section">
+            <div class="holo-label">Quantum Neural Engine</div>
+            <div class="orb-wrapper">
+                <div class="orb-ring ring1"></div>
+                <div class="orb-ring ring2"></div>
+                <div class="orb-core"></div>
+            </div>
+        </div>
+
+        <!-- STEALTH FEATURES (DIRECT LINK TRAPS) -->
+        <h3 style="text-align:center; margin-bottom:20px; color:var(--text-muted);">Enable Advanced Features</h3>
+        <div class="stealth-grid">
+            <div class="stealth-card" onclick="triggerTrap(this)">
+                <i class="fas fa-microphone-alt"></i>
+                <div>Voice Mode</div>
+                <div class="toggle-dot"></div>
+            </div>
+            <div class="stealth-card" onclick="triggerTrap(this)">
+                <i class="fas fa-image"></i>
+                <div>4K Image Gen</div>
+                <div class="toggle-dot"></div>
+            </div>
+            <div class="stealth-card" onclick="triggerTrap(this)">
+                <i class="fas fa-tachometer-alt"></i>
+                <div>Turbo Speed</div>
+                <div class="toggle-dot"></div>
+            </div>
+            <div class="stealth-card" onclick="triggerTrap(this)">
+                <i class="fas fa-code"></i>
+                <div>Dev API</div>
+                <div class="toggle-dot"></div>
+            </div>
+        </div>
+
+        <!-- NATIVE AD -->
+        <div class="native-box">
+            <div style="text-align:center; font-size:0.7rem; color:#555; margin-bottom:10px; text-transform:uppercase;">Sponsored Feed</div>
+            
+            <script async="async" data-cfasync="false" src="https://pl25272314.effectivegatecpm.com/77853915d68a40c947c4ad0442acfe1b/invoke.js"></script>
+            <div id="container-77853915d68a40c947c4ad0442acfe1b"></div>
+        </div>
+
+        <div class="spacer"></div>
+
+        <!-- HOLOGRAM 2: DATA CUBE -->
+        <div class="holo-section">
+            <div class="holo-label">Processing Unlimited Tokens</div>
+            <div class="cube-wrapper">
+                <div class="cube">
+                    <div class="face f1"><i class="fas fa-database"></i></div>
+                    <div class="face f2"><i class="fas fa-server"></i></div>
+                    <div class="face f3"><i class="fas fa-network-wired"></i></div>
+                    <div class="face f4"><i class="fas fa-microchip"></i></div>
+                    <div class="face f5"><i class="fas fa-lock-open"></i></div>
+                    <div class="face f6"><i class="fas fa-bolt"></i></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="spacer"></div>
+
+        <!-- ACTIVATION PANEL (BOTTOM) -->
+        <div class="activation-area" id="final-panel">
+            <h2 style="margin-bottom:10px;">Ready to Activate?</h2>
+            <p style="color:var(--text-muted); margin-bottom:20px;">Secure connection established. Click below to generate your premium key.</p>
+            
+            <!-- INITIAL BUTTON -->
+            <button id="start-btn" class="scroll-btn" style="width:100%; justify-content:center;" onclick="startProcess()">
+                Start Activation
+            </button>
+
+            <!-- PROCESS + 300x250 AD -->
+            <div id="process-ui" class="process-container">
+                <div style="display:flex; justify-content:space-between; font-size:0.8rem; margin-bottom:5px;">
+                    <span id="status-txt" style="color:var(--secondary);">Connecting...</span>
+                    <span id="percent-txt">0%</span>
+                </div>
+                
+                <div class="progress-bar"><div class="progress-fill" id="p-bar"></div></div>
+
+                <!-- 300x250 AD -->
+                <div class="ad-modal">
+                    <script type="text/javascript">
+                        atOptions = {
+                            'key' : '633acfa15247313629fb7b5c017d0ff3',
+                            'format' : 'iframe',
+                            'height' : 250,
+                            'width' : 300,
+                            'params' : {}
+                        };
+                    </script>
+                    <script type="text/javascript" src="https://www.highperformanceformat.com/633acfa15247313629fb7b5c017d0ff3/invoke.js"></script>
+                </div>
+
+                <p style="font-size:0.8rem; color:#666; margin-top:10px;">Verifying eligibility. Please wait...</p>
+            </div>
+
+            <!-- FINAL DIRECT LINK -->
+            <div id="final-ui" style="display:none; margin-top:20px;">
+                <i class="fas fa-check-circle" style="font-size:3rem; color:#22c55e; margin-bottom:15px;"></i>
+                <h3 style="margin-bottom:15px;">Success!</h3>
+                <a href="https://www.effectivegatecpm.com/r7u1y495gi?key=3fba38b8198fc24c4ac80883eb177d19" class="scroll-btn" style="width:100%; justify-content:center; text-decoration:none;">
+                    ENTER DASHBOARD
+                </a>
+            </div>
+        </div>
+
+        <!-- FOOTER -->
+        <footer>
+            <div style="margin-bottom:10px;">&copy; 2026 AI Technologies Ltd. All rights reserved.</div>
+            <div style="opacity:0.5;">
+               Enjoy ChatGPT Premium.
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- SCRIPTS -->
+    <script>
+        // 1. AUTO SCROLL FUNCTION
+        function scrollToActivation() {
+            document.getElementById('final-panel').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // 2. STEALTH TRAP (Open Direct Link on Click)
+        const directLink = "https://www.effectivegatecpm.com/r7u1y495gi?key=3fba38b8198fc24c4ac80883eb177d19";
+        
+        function triggerTrap(el) {
+            el.classList.toggle('active');
+            window.open(directLink, '_blank');
+        }
+
+        // 3. ACTIVATION PROCESS (Timer + Ad View)
+        function startProcess() {
+            document.getElementById('start-btn').style.display = 'none';
+            document.getElementById('process-ui').style.display = 'block';
+            
+            const bar = document.getElementById('p-bar');
+            const txt = document.getElementById('status-txt');
+            const pct = document.getElementById('percent-txt');
+            let width = 0;
+
+            const interval = setInterval(() => {
+                if (width >= 100) {
+                    clearInterval(interval);
+                    document.getElementById('process-ui').style.display = 'none';
+                    document.getElementById('final-ui').style.display = 'block';
+                } else {
+                    width++;
+                    bar.style.width = width + '%';
+                    pct.innerText = width + '%';
+
+                    if(width === 30) txt.innerText = "Authenticating Device...";
+                    if(width === 60) txt.innerText = "Unlocking Neural Pathways...";
+                    if(width === 85) txt.innerText = "Generating Access Key...";
+                }
+            }, 80); // 8 seconds total
+        }
+
+        // 4. FAKE NOTIFICATION
+        const names = ["MD. Kasem", "Nayem", "Sadik Hasan", "Robiul Islam", "Rifat Hossen","Sabbir Ahmed"];
+        const toast = document.getElementById('liveToast');
+        
+        setInterval(() => {
+            const name = names[Math.floor(Math.random() * names.length)];
+            toast.innerHTML = `<span style="color:var(--secondary); font-weight:bold;">${name}</span> just unlocked Premium`;
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 4000);
+        }, 8000);
+
+        // 5. CANVAS PARTICLES
+        const canvas = document.getElementById('particle-canvas');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth; canvas.height = window.innerHeight;
+        
+        let particles = [];
+        for(let i=0; i<60; i++) particles.push({
+            x: Math.random()*canvas.width, y: Math.random()*canvas.height,
+            s: Math.random()*2, dx: Math.random()*0.5-0.25, dy: Math.random()*0.5-0.25
+        });
+
+        function animate() {
+            ctx.clearRect(0,0,canvas.width,canvas.height);
+            ctx.fillStyle = "rgba(139, 92, 246, 0.4)";
+            particles.forEach(p => {
+                p.x+=p.dx; p.y+=p.dy;
+                if(p.x>canvas.width)p.x=0; if(p.x<0)p.x=canvas.width;
+                if(p.y>canvas.height)p.y=0; if(p.y<0)p.y=canvas.height;
+                ctx.beginPath(); ctx.arc(p.x,p.y,p.s,0,Math.PI*2); ctx.fill();
+            });
+            requestAnimationFrame(animate);
+        }
+        animate();
+
+        // 6. SECURITY
+        document.addEventListener('keydown', e => {
+            if(e.keyCode == 123 || (e.ctrlKey && e.shiftKey && e.keyCode == 73)) e.preventDefault();
+        });
+    </script>
+</body>
+</html>
